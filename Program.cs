@@ -25,7 +25,7 @@ namespace xmlTransformer
         }
 
         /// <summary>
-        /// Converts an image file from one format to another.
+        /// Converts an file from one format to another.
         /// </summary>
         /// <param name="xsltTransformation">The path to the file containing the Xsl Transformation.</param>
         /// <param name="input">The path to the file that is to be converted.</param>
@@ -39,8 +39,7 @@ namespace xmlTransformer
             XslCompiledTransform xslt = new XslCompiledTransform();
             xslt.Load(xsltTransformation.FullName);
 
-            // Execute the transform and output the results to a file.
-
+            //TODO: Allow settings to be configurable
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.ConformanceLevel = ConformanceLevel.Auto;
             settings.IgnoreWhitespace = true;
@@ -49,7 +48,7 @@ namespace xmlTransformer
             XmlWriterSettings writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
             writerSettings.NewLineHandling = NewLineHandling.Replace;
-
+            //TODO: give feedback that the transformation in Progress
             using (XmlReader sr = XmlReader.Create(input.FullName, settings))
             {
                 Console.WriteLine($"Reading Inputfile : {input.Name} {input.Length}");

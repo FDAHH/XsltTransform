@@ -6,3 +6,10 @@ We use it to sort big xml files and compare them later or to extract specific va
 XslCompiledTransform only supports xslt 1.0 syntax. (https://docs.microsoft.com/en-us/dotnet/api/system.xml.xsl.xslcompiledtransform?view=netcore-3.1)
 
 Only use it as a starting Point.
+
+TODO:
+Allow settings to be configurable
+Add more xslt templates with general usecases
+Add exceptionhandling
+Add better parameter handeling with System.CommandLine
+Research better xslt library for use of xslt 2.0 / 3.0
